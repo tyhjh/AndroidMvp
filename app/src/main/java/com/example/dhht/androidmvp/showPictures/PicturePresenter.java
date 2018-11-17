@@ -51,9 +51,4 @@ public class PicturePresenter implements PicturesContract.Presenter {
         });
     }
 
-    @Override
-    public void getRemotePic() {
-
-    }
-
 }

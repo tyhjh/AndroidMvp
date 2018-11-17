@@ -34,7 +34,6 @@ public class PicturesActivity extends AppCompatActivity implements PicturesContr
         mPresenter = new PicturePresenter(this);
         mPresenter.getLocalPic();
         PermissonUtil.checkPermission(PicturesActivity.this, null, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE});
-
         initRcycleView();
         findViewById(R.id.fab_add).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,12 +83,6 @@ public class PicturesActivity extends AppCompatActivity implements PicturesContr
     @Override
     public void addPic(Picture picture) {
         mPictureAdapter.insertData(0, picture);
-    }
-
-    //同步图片
-    @Override
-    public void syncPicSuccss() {
-        ToastUtil.showShort("同步数据成功");
     }
 
 }
