@@ -1,4 +1,4 @@
-package com.example.dhht.androidmvp.data;
+package com.example.dhht.androidmvp.showPictures.domain.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

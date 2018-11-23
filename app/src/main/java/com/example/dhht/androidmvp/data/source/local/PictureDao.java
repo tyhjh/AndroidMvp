@@ -6,7 +6,8 @@ import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.example.dhht.androidmvp.data.Picture;
+
+import com.example.dhht.androidmvp.showPictures.domain.model.Picture;
 
 import java.util.List;
 

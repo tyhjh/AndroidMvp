@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.dhht.androidmvp.R;
-import com.example.dhht.androidmvp.data.Picture;
+import com.example.dhht.androidmvp.showPictures.domain.model.Picture;
 import com.example.recyclelibrary.CommonAdapter;
 import com.example.recyclelibrary.CommonViewHolder;
 

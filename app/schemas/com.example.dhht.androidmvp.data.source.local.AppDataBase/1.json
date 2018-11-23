@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "64c7fd59584036afc647e7e87eda8162",
+    "entities": [
+      {
+        "tableName": "pictures",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pictureid` INTEGER NOT NULL, `name` TEXT NOT NULL, `folderName` TEXT NOT NULL, `localPath` TEXT, `remotePath` TEXT, PRIMARY KEY(`pictureid`))",
+        "fields": [
+          {
+            "fieldPath": "mId",
+            "columnName": "pictureid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "folderName",
+            "columnName": "folderName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localPath",
+            "columnName": "localPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "remotePath",
+            "columnName": "remotePath",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pictureid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"64c7fd59584036afc647e7e87eda8162\")"
+    ]
+  }
+}

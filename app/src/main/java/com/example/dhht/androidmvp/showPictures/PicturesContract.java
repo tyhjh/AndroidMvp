@@ -2,7 +2,8 @@ package com.example.dhht.androidmvp.showPictures;
 
 import com.example.dhht.androidmvp.app.BasePresenter;
 import com.example.dhht.androidmvp.app.BaseView;
-import com.example.dhht.androidmvp.data.Picture;
+import com.example.dhht.androidmvp.showPictures.domain.model.Picture;
+
 
 import java.util.List;
 

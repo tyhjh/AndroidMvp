@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.example.dhht.androidmvp.data.Picture;
+import com.example.dhht.androidmvp.showPictures.domain.model.Picture;
 
 
 @Database(entities = {Picture.class}, version = 1)

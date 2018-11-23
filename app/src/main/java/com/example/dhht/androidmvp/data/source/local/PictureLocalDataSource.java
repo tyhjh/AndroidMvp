@@ -1,7 +1,7 @@
 package com.example.dhht.androidmvp.data.source.local;
 
-import com.example.dhht.androidmvp.data.Picture;
 import com.example.dhht.androidmvp.data.source.PictureDataSource;
+import com.example.dhht.androidmvp.showPictures.domain.model.Picture;
 import com.example.dhht.androidmvp.util.AppExecutors;
 
 import java.util.List;
