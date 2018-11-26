@@ -14,7 +14,10 @@ import com.example.dhht.androidmvp.R;
 import com.example.dhht.androidmvp.showPictures.domain.model.Picture;
 import com.example.recyclelibrary.CommonAdapter;
 import com.example.recyclelibrary.CommonViewHolder;
+import com.yorhp.picturepick.OnPickListener;
+import com.yorhp.picturepick.PicturePickUtil;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +41,15 @@ public class PicturesActivity extends AppCompatActivity implements PicturesContr
         findViewById(R.id.fab_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mPresenter.addPic();
+                PicturePickUtil.setCreatNewFile(false);
+                PicturePickUtil.pick(PicturesActivity.this, new OnPickListener() {
+                    @Override
+                    public void pickPicture(File file) {
+                        mPresenter.addPic(file);
+                    }
+                });
+
+
             }
         });
     }

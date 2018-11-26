@@ -5,6 +5,7 @@ import com.example.dhht.androidmvp.app.BaseView;
 import com.example.dhht.androidmvp.showPictures.domain.model.Picture;
 
 
+import java.io.File;
 import java.util.List;
 
 public interface PicturesContract {
@@ -23,6 +24,6 @@ public interface PicturesContract {
         //删除本地图片
         void deletePic(Picture picture);
         //添加本地图片
-        void addPic();
+        void addPic(File file);
     }
 }

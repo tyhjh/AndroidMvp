@@ -6,7 +6,7 @@ public class UseCaseHandler {
 
     private final UseCaseScheduler mUseCaseScheduler;
 
-    public UseCaseHandler(UseCaseScheduler useCaseScheduler) {
+    private UseCaseHandler(UseCaseScheduler useCaseScheduler) {
         mUseCaseScheduler = useCaseScheduler;
     }
 
@@ -79,6 +79,17 @@ public class UseCaseHandler {
         public void onError() {
             mUseCaseHandler.notifyError(mCallback);
         }
+    }
+
+
+
+
+
+    public static UseCaseHandler getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new UseCaseHandler(new UseCaseThreadPoolScheduler());
+        }
+        return INSTANCE;
     }
 
 

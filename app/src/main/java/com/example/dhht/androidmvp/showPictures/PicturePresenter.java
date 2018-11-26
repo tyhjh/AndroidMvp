@@ -31,7 +31,7 @@ public class PicturePresenter implements PicturesContract.Presenter {
         mGetPictures = new GetPictures(mLocalDataSource);
         mDeletePicture = new DeletePicture(mLocalDataSource);
         mAddPicture=new AddPicture(mLocalDataSource);
-        mUseCaseHandler = new UseCaseHandler(new UseCaseThreadPoolScheduler());
+        mUseCaseHandler =UseCaseHandler.getInstance();
     }
 
     @Override
@@ -67,23 +67,16 @@ public class PicturePresenter implements PicturesContract.Presenter {
     }
 
     @Override
-    public void addPic() {
-        PicturePickUtil.setCreatNewFile(false);
-        PicturePickUtil.pick(mPicturesActivity, new OnPickListener() {
+    public void addPic(File file) {
+        AddPicture.RequestValues requestValues=new AddPicture.RequestValues(file);
+        mUseCaseHandler.execute(mAddPicture, requestValues, new UseCase.UseCaseCallback<AddPicture.ResponseValue>() {
             @Override
-            public void pickPicture(File file) {
-                AddPicture.RequestValues requestValues=new AddPicture.RequestValues(file);
-                mUseCaseHandler.execute(mAddPicture, requestValues, new UseCase.UseCaseCallback<AddPicture.ResponseValue>() {
-                    @Override
-                    public void onSuccess(AddPicture.ResponseValue response) {
-                        mPicturesActivity.addPic(response.getPicture());
-                    }
+            public void onSuccess(AddPicture.ResponseValue response) {
+                mPicturesActivity.addPic(response.getPicture());
+            }
 
-                    @Override
-                    public void onError() {
-
-                    }
-                });
+            @Override
+            public void onError() {
 
             }
         });
